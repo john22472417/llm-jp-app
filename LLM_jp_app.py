@@ -1,9 +1,9 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain_huggingface import HuggingFaceEndpoint
-import os
 
-HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+# APIトークンをSecretsから取得
+HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
 llm = HuggingFaceEndpoint(
     repo_id="HuggingFaceH4/zephyr-7b-beta",
